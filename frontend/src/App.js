@@ -10,7 +10,7 @@ import RegisterScreen from "./screens/RegisterScreen";
 import ProfileScreen from "./screens/ProfileScreen";
 import UserListScreen from "./screens/UserListScreen";
 import UserEditScreen from "./screens/UserEditScreen";
-
+import ProductListScreen from "./screens/ProductListScreen";
 
 const App = () => {
   return (
@@ -26,6 +26,7 @@ const App = () => {
           <Route path="/" component={HomeScreen} exact />
           <Route path="/admin/userlist" component={UserListScreen} />
           <Route path="/admin/user/:id/edit" component={UserEditScreen} />
+          <Route path="/admin/productlist" component={ProductListScreen} />
         </Container>
       </main>
       <Footer />
