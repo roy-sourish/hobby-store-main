@@ -9,7 +9,9 @@ import {
   productUpdateReducer,
 
 } from "./reducers/productReducers";
+
 import { cartReducer } from "./reducers/cartReducers";
+
 import {
   userDetailsReducer,
   userLoginReducer,
@@ -19,6 +21,7 @@ import {
   userDeleteReducer,
   userUpdateReducer,
 } from "./reducers/userReducers";
+
 
 const reducer = combineReducers({
   productList: productListReducer,
@@ -44,6 +47,7 @@ const userInfoFromStorage = localStorage.getItem("userInfo")
   ? JSON.parse(localStorage.getItem("userInfo"))
   : null;
 
+// laod from local storage
 const initialState = {
   cart: { cartItems: cartItemsFromStorage },
   userLogin: { userInfo: userInfoFromStorage },

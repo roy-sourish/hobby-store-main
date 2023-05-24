@@ -11,9 +11,12 @@ const reviewSchema = mongoose.Schema(
 
 const productSchema = mongoose.Schema(
   {
+    // which admin user created which product
     user: {
       type: mongoose.Schema.Types.ObjectId,
       required: true,
+      // referencing the user model
+      //adds relationship between the product and user
       ref: "User",
     },
     name: {

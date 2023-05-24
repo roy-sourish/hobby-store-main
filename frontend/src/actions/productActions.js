@@ -21,8 +21,9 @@ export const listProducts = () => async (dispatch) => {
   try {
     dispatch({ type: PRODUCT_LIST_REQUEST });
 
+    // get data 
     const { data } = await axios.get("/api/products");
-
+    // fire off on successful fetching of data
     dispatch({
       type: PRODUCT_LIST_SUCCESS,
       payload: data,

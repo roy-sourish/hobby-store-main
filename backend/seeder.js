@@ -14,18 +14,21 @@ connectDB();
 const importData = async () => {
   try {
     // clear all three collections out completely
-    // reurns a promise
+    // returns a promise
     await Order.deleteMany();
     await Product.deleteMany();
     await User.deleteMany();
 
+    // import users 
     const createdUsers = await User.insertMany(users);
     const adminUser = createdUsers[0]._id;
 
+    // add admin user to each product 
     const sampleProducts = products.map((product) => {
       return { ...product, user: adminUser };
     });
 
+    // import all the product data including the admin user
     await Product.insertMany(sampleProducts);
 
     console.log("================\nData Imported!\n================");
